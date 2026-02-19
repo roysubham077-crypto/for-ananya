@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>With You, Ananya 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    text-align: center;
+    background: linear-gradient(-45deg, #2b0f1a, #3e1c2f, #4b1e38, #1a0f1f);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.container {
+    padding: 50px 20px;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #ff9ecf;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.8;
+    color: #f3d6e4;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+
+.image-row img {
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    transition: transform 0.4s ease;
+    object-fit: contain;
+}
+
+.left-img, .right-img {
+    max-width: 260px;
+    max-height: 400px;
+}
+
+.center-img {
+    max-width: 320px;
+    max-height: 480px;
+}
+
+.image-row img:hover {
+    transform: scale(1.05);
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.yes { background: #c2185b; color: white; }
+.no { background: #333; color: white; }
+
+button:hover { transform: scale(1.1); }
+
+.hidden {
+    opacity: 0;
+    transition: 2s;
+    margin-top: 80px;
+}
+
+.show {
+    opacity: 1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Ananya 🤍</h1>
+
+<div class="image-row">
+    <img src="sylphie.jpg" class="left-img">
+    <img src="ananya.jpg" class="center-img">
+    <img src="rudy.jpg" class="right-img">
+</div>
+
+<p>
+Ananya…  
+From the moment you walked into my life,  
+everything felt softer… calmer… warmer.
+</p>
+
+<p>
+If lately we’ve felt distant,  
+or if I’ve made you uncomfortable,  
+that truly matters to me.  
+More than pride. More than ego.
+</p>
+
+<p>
+I’m not here to defend myself.  
+I’m here to grow.  
+To listen better.  
+To become someone you feel safe with again.
+</p>
+
+<h1>Will you walk beside me? ❤️</h1>
+
+<button class="yes" onclick="handleResponse('yes')">Yes 🤍</button>
+<button class="no" onclick="handleResponse('no')">I Need Time</button>
+
+<div class="hidden" id="secret">
+<p>
+No pressure.  
+No emotional forcing.  
+Just Rudy loving his Sylphie.  
+Trying to be better.
+</p>
+<p>Always yours.</p>
+</div>
+
+</div>
+
+<!-- Hidden Audio -->
+<audio id="loveMusic">
+    <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function handleResponse(answer) {
+    const music = document.getElementById("loveMusic");
+
+    // Restart song from beginning every time
+    music.currentTime = 0;
+    music.play();
+
+    if (answer === 'yes') {
+        alert('I promise to cherish this chance 🤍');
+    } else {
+        alert('Take your time. I will keep improving.');
+    }
+}
+
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 200) {
+        document.getElementById("secret").classList.add("show");
+    }
+});
+</script>
+
+</body>
+</html>
